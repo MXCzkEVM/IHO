@@ -38,43 +38,49 @@ function Page() {
   ]
   return (
     <>
-      <div className="py-80px lt-lg:py-40px">
-        <Carousel>
-          <CarouselContent>
-            <CarouselItem>
-              <div className="lg:px-10 flex flex-row gap-6 lt-lg:flex-col-reverse">
-                <div className="flex justify-center flex-1 flex-col lt-lg:text-center font-600 font-normal">
-                  <div className="text-28px lt-lg:text-18px">Moonchain initial hardware offering (IHO)</div>
-                  <div className="text-56px lt-lg:hidden my-16px">Welcome to the future of free mining hardware!</div>
-                  <div className="text-28px lt-lg:hidden">CHOOSE, LOCK, and MINE REWARDS</div>
-                  <div className="mt-48px">
-                    <Button disabled>COMING SOON</Button>
+      <div className="py-80px lt-lg:py-40px w-full">
+        <div className="mx84px">
+          <Carousel>
+            <CarouselContent>
+              <CarouselItem>
+                <div className="lg:px-10 flex flex-row gap-6 lt-lg:flex-col-reverse">
+                  <div className="flex justify-center flex-1 flex-col lt-lg:text-center font-600 font-normal">
+                    <div className="text-28px lt-lg:text-18px">Moonchain initial hardware offering (IHO)</div>
+                    <div className="text-56px lt-lg:hidden my-16px">Welcome to the future of free mining hardware!</div>
+                    <div className="text-28px lt-lg:hidden">CHOOSE, LOCK, and MINE REWARDS</div>
+                    <div className="mt-48px">
+                      <Button disabled>COMING SOON</Button>
+                    </div>
+                  </div>
+                  <div className="flex flex-1">
+                    <img className="w-full object-cover" src="https://blueberryring.com/wp-content/uploads/2024/10/Samsung-Galaxy-Ring.webp" />
                   </div>
                 </div>
-                <div className="flex flex-1">
-                  <img className="w-full object-cover" src="https://blueberryring.com/wp-content/uploads/2024/10/Samsung-Galaxy-Ring.webp" />
-                </div>
-              </div>
-            </CarouselItem>
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+
       </div>
       <div className="py-80px lt-lg:py-40px w-full">
-        <div className="flex-center text-28px line-height-36px mb-40px lt-lg:text-18px">How to participate in iho?</div>
-        <div className="flex-center flex-wrap gap-12 lt-lg:gap-6 mx-20% lt-lg:mx-5%">
-          {items.map(item => (
-            <Card key={item.title} className="p-24px h-340px lt-lg:h-300px flex-col items-center">
-              {item.img}
-              <div className="mt-18px flex items-center font-600 mb-12px">
-                <span>{item.title}</span>
-              </div>
-              <div className="text-center max-w-210px text-12px">{item.desc}</div>
-            </Card>
-          ))}
+        <div className="mx-20% lt-lg:mx-5%">
+          <div className=" text-28px line-height-36px mb-40px lt-lg:text-18px">How to participate in iho?</div>
+          <div className="flex justify-between lt-lg:justify-center flex-wrap gap-12 lt-lg:gap-6">
+            {items.map(item => (
+              <Card key={item.title} className="p-24px w-340px h-340px lt-lg:h-300px flex-col items-center">
+                {item.img}
+                <div className="mt-18px flex items-center font-600 mb-12px">
+                  <span>{item.title}</span>
+                </div>
+                <div className="text-center text-12px">{item.desc}</div>
+              </Card>
+            ))}
+          </div>
         </div>
-        <div className="py-80px lt-lg:py-40px w-full">
+
+        <div className="py-80px lt-lg:py-40px">
           <div className="mx-20% lt-lg:mx-5%">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">

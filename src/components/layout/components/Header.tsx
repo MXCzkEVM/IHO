@@ -1,11 +1,9 @@
-import { AppearanceSwitch } from '@/components/ui/appearance-switch'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { LanguageSwitch } from '@/components/ui/language-switch'
 
 function Header() {
   return (

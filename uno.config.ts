@@ -10,9 +10,7 @@ const config = defineConfig({
     presetUno({ dark: 'class' }),
     presetAttributify(),
     presetIcons({
-      collections: {
-        custom: localIconfontLoader,
-      },
+      collections: { custom: localIconfontLoader },
     }),
     presetAnimations(),
     presetShadcn({
