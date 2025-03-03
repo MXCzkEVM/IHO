@@ -7,7 +7,8 @@
     "build": "lnv -- next build",
     "start": "lnv -- next start",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "postinstall": "harsta compile"
   },
   "dependencies": {
     "@hairy/ether-lib": "^1.1.1",
