@@ -1,13 +1,11 @@
 import { AppearanceSwitch } from '@/components/ui/appearance-switch'
-import { LanguageSwitch } from '@/components/ui/language-switch'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
-
+} from '@/components/ui/dropdown-menu'
+import { LanguageSwitch } from '@/components/ui/language-switch'
 
 function Header() {
   return (
@@ -43,11 +41,11 @@ function Header() {
           </li>
         </ul>
       </div>
-      <div className='flex-1'></div>
-      <div className='flex gap-12px'>
+      <div className="flex-1"></div>
+      <div className="flex gap-12px">
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <div className='lg:hidden text-24px i-material-symbols-format-list-bulleted' />
+            <div className="lg:hidden text-24px i-material-symbols-format-list-bulleted" />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuItem>

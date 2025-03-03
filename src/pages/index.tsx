@@ -1,8 +1,14 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
+
 import {
   Card,
-} from "@/components/ui/card"
-
+} from '@/components/ui/card'
 import {
   Carousel,
   CarouselContent,
@@ -10,32 +16,25 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-
 
 function Page() {
   const items = [
     {
-      img: <div className='text-160px lt-lg:text-120px i-line-md-sunny-filled-loop-to-moon-filled-alt-loop-transition' />,
+      img: <div className="text-160px lt-lg:text-120px i-line-md-sunny-filled-loop-to-moon-filled-alt-loop-transition" />,
 
       title: 'Simply Lock Moonchain',
-      desc: 'Your wallet, your keys. Moonchain uses a fully transparent Ethereum Smart Contract, meaning your tokens stay on your wallet, ensuring decentralized security'
+      desc: 'Your wallet, your keys. Moonchain uses a fully transparent Ethereum Smart Contract, meaning your tokens stay on your wallet, ensuring decentralized security',
     },
     {
-      img: <div className='text-160px lt-lg:text-120px i-material-symbols-devices-other' />,
+      img: <div className="text-160px lt-lg:text-120px i-material-symbols-devices-other" />,
       title: 'Select Your Miner',
-      desc: 'Moonchain will be rolling out an entire catalogue of Hardware miners. Choose the Hardware that suits your needs. '
+      desc: 'Moonchain will be rolling out an entire catalogue of Hardware miners. Choose the Hardware that suits your needs. ',
     },
     {
-      img: <div className='text-160px lt-lg:text-120px i-iconamoon-delivery-fast-fill' />,
+      img: <div className="text-160px lt-lg:text-120px i-iconamoon-delivery-fast-fill" />,
       title: 'Receive Your Hardware',
-      desc: 'Free Hardware, Delivered Free to your door!'
-    }
+      desc: 'Free Hardware, Delivered Free to your door!',
+    },
   ]
   return (
     <>
@@ -48,7 +47,7 @@ function Page() {
                   <div className="text-28px lt-lg:text-18px">Moonchain initial hardware offering (IHO)</div>
                   <div className="text-56px lt-lg:hidden my-16px">Welcome to the future of free mining hardware!</div>
                   <div className="text-28px lt-lg:hidden">CHOOSE, LOCK, and MINE REWARDS</div>
-                  <div className='mt-48px'>
+                  <div className="mt-48px">
                     <Button disabled>COMING SOON</Button>
                   </div>
                 </div>
@@ -64,9 +63,9 @@ function Page() {
       </div>
       <div className="py-80px lt-lg:py-40px w-full">
         <div className="flex-center text-28px line-height-36px mb-40px lt-lg:text-18px">How to participate in iho?</div>
-        <div className='flex-center flex-wrap gap-12 lt-lg:gap-6 mx-20% lt-lg:mx-5%'>
-          {items.map((item, index) => (
-            <Card key={index} className='p-24px h-340px lt-lg:h-300px flex-col items-center'>
+        <div className="flex-center flex-wrap gap-12 lt-lg:gap-6 mx-20% lt-lg:mx-5%">
+          {items.map((item) => (
+            <Card key={item.title} className="p-24px h-340px lt-lg:h-300px flex-col items-center">
               {item.img}
               <div className="mt-18px flex items-center font-600 mb-12px">
                 <span>{item.title}</span>
@@ -75,8 +74,8 @@ function Page() {
             </Card>
           ))}
         </div>
-        <div className='py-80px lt-lg:py-40px w-full'>
-          <div className='mx-20% lt-lg:mx-5%'>
+        <div className="py-80px lt-lg:py-40px w-full">
+          <div className="mx-20% lt-lg:mx-5%">
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>What is moonchain iho?</AccordionTrigger>
@@ -87,7 +86,11 @@ function Page() {
               <AccordionItem value="item-2">
                 <AccordionTrigger>How do i lock moonchain to get my free hardware?</AccordionTrigger>
                 <AccordionContent>
-                  Simply visit <a href="https://iho.moonchain.com/">iho.moonchain.com</a> choose your desired mining Hardware, lock the corresponding amount of Moonchain for the lock period and fill out the order form. Simple!
+                  Simply visit
+                  {' '}
+                  <a href="https://iho.moonchain.com/">iho.moonchain.com</a>
+                  {' '}
+                  choose your desired mining Hardware, lock the corresponding amount of Moonchain for the lock period and fill out the order form. Simple!
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3">
