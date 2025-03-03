@@ -64,7 +64,7 @@ function Page() {
       <div className="py-80px lt-lg:py-40px w-full">
         <div className="flex-center text-28px line-height-36px mb-40px lt-lg:text-18px">How to participate in iho?</div>
         <div className="flex-center flex-wrap gap-12 lt-lg:gap-6 mx-20% lt-lg:mx-5%">
-          {items.map((item) => (
+          {items.map(item => (
             <Card key={item.title} className="p-24px h-340px lt-lg:h-300px flex-col items-center">
               {item.img}
               <div className="mt-18px flex items-center font-600 mb-12px">
