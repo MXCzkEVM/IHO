@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react'
-import { cn } from '@shadcn/utils'
+import { cn } from '@/utils/util'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })

@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Main from './components/Main'
 
-export default function Layout(props: PropsWithChildren) {
+export function Layout(props: PropsWithChildren) {
   return (
     <Container>
       <Header />
