@@ -7,8 +7,7 @@ export function AppearanceSwitch({ className = '' }: { className?: string }) {
     disableTransitionExclude: ['.i-lucide-sun', '.i-lucide-moon'],
   })
   useEffect(() => {
-    if (!isDark) 
-      toggleDark()
+    !isDark && toggleDark()
   }, [])
   return (
     <button type="button" disabled onClick={toggleDark} className={`flex ${className} text-gray-5`}>
