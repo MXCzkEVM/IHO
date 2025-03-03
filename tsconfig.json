@@ -8,11 +8,16 @@
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": "./",
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
+      "@shadcn/*": [
+        "./src/library/shadcn-ui/*"
+      ],
       "@/*": [
-        "./src/*"
+        "./src/*",
+        "!./src/library/*"
       ]
     },
     "resolveJsonModule": true,

@@ -8,6 +8,7 @@ import { RainbowKitProvider } from '@rainbow-me/rainbowkit'
 import Head from 'next/head'
 
 import '@/styles/globals.css'
+import '@unocss/reset/tailwind.css'
 import '@rainbow-me/rainbowkit/styles.css'
 
 export default function App({ Component, pageProps }: any) {

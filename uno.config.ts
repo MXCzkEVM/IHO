@@ -1,5 +1,7 @@
-import { defineConfig, presetAttributify, presetIcons, presetUno } from 'unocss'
 import FileSystemSvgoLoader from 'iconify-svgo-loader'
+import { defineConfig, presetAttributify, presetIcons, presetUno } from 'unocss'
+import presetAnimations from 'unocss-preset-animations'
+import { builtinColors, presetShadcn } from 'unocss-preset-shadcn'
 
 const localIconfontLoader = FileSystemSvgoLoader('./assets/iconfonts')
 
@@ -11,6 +13,12 @@ const config = defineConfig({
       collections: {
         custom: localIconfontLoader,
       },
+    }),
+    presetAnimations(),
+    presetShadcn({
+      color: 'gray',
+      // With default setting for SolidUI, you need to set the darkSelector option.
+      darkSelector: '[data-kb-theme="dark"]',
     }),
   ],
   shortcuts: {
