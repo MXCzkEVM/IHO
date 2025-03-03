@@ -74,8 +74,8 @@ function Header() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <AppearanceSwitch className="text-24px" />
-        <LanguageSwitch className="text-24px" />
+        {/* <AppearanceSwitch className="text-24px" />
+        <LanguageSwitch className="text-24px" /> */}
       </div>
     </header>
   )
