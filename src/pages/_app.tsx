@@ -3,7 +3,7 @@ import { Layout, WagmiConfigProvider } from '@/components'
 import { config } from '@/config'
 
 import { Injector, useMounted } from '@hairy/react-lib'
-import { RainbowKitProvider } from '@rainbow-me/rainbowkit'
+import { darkTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit'
 
 import Head from 'next/head'
 
@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: any) {
       <Injector
         install={[
           { component: WagmiConfigProvider, props: { config } },
-          { component: RainbowKitProvider },
+          { component: RainbowKitProvider, props: { theme: darkTheme({ accentColor: '#234F9B' }) } },
         ]}
       >
         {mounted && layout(<Component {...pageProps} />)}

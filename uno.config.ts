@@ -1,5 +1,5 @@
 import FileSystemSvgoLoader from 'iconify-svgo-loader'
-import { defineConfig, presetAttributify, presetIcons, presetUno } from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, presetTagify, presetUno, transformerAttributifyJsx } from 'unocss'
 import presetAnimations from 'unocss-preset-animations'
 import { presetShadcn } from 'unocss-preset-shadcn'
 
@@ -16,6 +16,10 @@ const config = defineConfig({
     presetShadcn({
       color: { base: 'gray' },
     }),
+    presetTagify(),
+  ],
+  transformers: [
+    transformerAttributifyJsx(),
   ],
   shortcuts: {
     'safe-area': 'pb-[constant(safe-area-inset-bottom)] pb-[env(safe-area-inset-bottom)]',
