@@ -46,9 +46,9 @@ function Page() {
                 <CarouselItem>
                   <div className="lg:px-10 flex flex-row gap-6 lt-lg:flex-col-reverse">
                     <div className="flex justify-center flex-1 flex-col lt-lg:text-center font-600 font-normal">
-                      <div className="text-28px font-600 lt-lg:text-18px">Moonchain initial hardware offering (IHO)</div>
+                      <div className="text-28px font-600 lt-lg:text-18px">Moonchain Initial Hardware Offering (IHO)</div>
                       <div className="text-56px font-600 line-height-60px lt-lg:hidden my-16px">Welcome to the future of free mining hardware!</div>
-                      <div className="text-28px font-600 line-height-32px lt-lg:hidden">CHOOSE, LOCK, and MINE REWARDS</div>
+                      <div className="text-28px font-600 line-height-32px lt-lg:hidden">Choose, LOCK, and MINE REWARDS</div>
                       <div className="mt-48px">
                         <Button disabled>COMING SOON</Button>
                       </div>
