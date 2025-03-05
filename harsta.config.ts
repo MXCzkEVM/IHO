@@ -1,33 +1,28 @@
 import { defineConfig } from 'harsta'
 
 const config = defineConfig({
-  solidity: '0.8.24',
-  defaultNetwork: 'goerli',
-  namedAccounts: {
-    deployer: { default: 0 },
-    owner: { default: 0 },
-    verifier: { default: 1 },
-  },
   networks: {
-    goerli: {
-      name: 'Goerli',
-      rpc: 'https://rpc.ankr.com/eth_goerli',
+    geneva: {
+      name: 'Moonchain',
+      rpc: 'https://geneva-rpc.moonchain.com',
       testnet: true,
-      id: 5,
-      currency: { name: 'Goerli Ether', symbol: 'ETH', decimals: 18 },
+      id: 5167004,
+      icon: 'https://raw.githubusercontent.com/MXCzkEVM/metadata/main/logo-circle.svg',
+      currency: { decimals: 18, name: 'MXC Token', symbol: 'MXC' },
       explorer: {
-        name: 'Etherscan',
-        url: 'https://goerli.etherscan.io',
+        name: 'etherscan',
+        url: 'https://geneva-explorer.moonchain.com',
       },
     },
-    ethereum: {
-      name: 'Ethereum',
-      rpc: 'https://eth.merkle.io',
-      id: 1,
-      currency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+    moonchain: {
+      name: 'Moonchain',
+      rpc: 'https://rpc.mxc.com',
+      id: 18686,
+      icon: 'https://raw.githubusercontent.com/MXCzkEVM/metadata/main/logo-circle.svg',
+      currency: { decimals: 18, name: 'MXC Token', symbol: 'MXC' },
       explorer: {
-        name: 'Etherscan',
-        url: 'https://etherscan.io',
+        name: 'etherscan',
+        url: 'https://explorer.moonchain.com',
       },
     },
   },
