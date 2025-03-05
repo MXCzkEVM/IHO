@@ -18,18 +18,17 @@ import {
 function Page() {
   const items = [
     {
-      img: <div className="text-160px i-line-md-sunny-filled-loop-to-moon-filled-alt-loop-transition" />,
-
+      img: <div className="i-line-md-sunny-filled-loop-to-moon-filled-alt-loop-transition" />,
       title: 'Simply Lock Moonchain',
       desc: 'Your wallet, your keys. Moonchain uses a fully transparent Ethereum Smart Contract, meaning your tokens stay on your wallet, ensuring decentralized security',
     },
     {
-      img: <div className="text-160px i-material-symbols-devices-other" />,
+      img: <div className="i-material-symbols-devices-other" />,
       title: 'Select Your Miner',
       desc: 'Moonchain will be rolling out an entire catalogue of Hardware miners. Choose the Hardware that suits your needs. ',
     },
     {
-      img: <div className="text-160px i-iconamoon-delivery-fast-fill" />,
+      img: <div className="i-iconamoon-delivery-fast-fill" />,
       title: 'Receive Your Hardware',
       desc: 'Free Hardware, Delivered Free to your door!',
     },
@@ -37,7 +36,7 @@ function Page() {
   return (
     <>
       <div className="max-w-1400px mx-auto">
-        <div className="py-80px lt-lg:py-40px w-full">
+        <div className="py-80px lt-lg:py-26px w-full">
           <div>
             <Carousel>
               <CarouselContent>
@@ -60,12 +59,12 @@ function Page() {
             </Carousel>
           </div>
         </div>
-        <div className="py-80px lt-lg:py-40px lt-lg:mx-24px flex-col">
+        <div className="py-80px lt-lg:py-26px lt-lg:mx-24px flex-col">
           <div className="text-28px font-600 leading-36px mb-40px lt-lg:mb-28px lt-lg:text-26px">How to participate in IHO?</div>
-          <div className="flex justify-between flex-wrap gap-12 font-500 leading-20px lt-lg:justify-center">
+          <div className="flex justify-between flex-wrap gap-12 font-500 leading-20px lt-md:hidden">
             {items.map(item => (
               <Card key={item.title} className="p-24px w-320px h-340px lt-lg:h-300px flex-col items-center">
-                {item.img}
+                <div className="text-160px">{item.img}</div>
                 <div className="mt-18px text-center text-12px">
                   {item.title}
                   :
@@ -75,8 +74,23 @@ function Page() {
               </Card>
             ))}
           </div>
+          <div className="flex justify-between flex-col gap-12 font-500 leading-20px md:hidden">
+            {items.map(item => (
+              <div key={item.title} className="flex">
+                <Card className="w-75px h-75px flex-center mr-12px flex-shrink-0">
+                  <div className="text-36px">{item.img}</div>
+                </Card>
+                <div className="text-12px">
+                  {item.title}
+                  :
+                  {' '}
+                  {item.desc}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="py-80px lt-lg:py-40px lt-lg:mx-24px">
+        <div className="py-80px lt-lg:py-26px lt-lg:mx-24px">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>What is moonchain IHO?</AccordionTrigger>
