@@ -4,7 +4,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { ConnectButton } from '@rainbow-me/rainbowkit'
+// import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 function Header() {
   return (
@@ -73,7 +73,6 @@ function Header() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <ConnectButton chainStatus={{ smallScreen: 'none' }} accountStatus={{ smallScreen: 'full' }} />
         {/* <AppearanceSwitch className="text-24px" />
         <LanguageSwitch className="text-24px" /> */}
       </div>
