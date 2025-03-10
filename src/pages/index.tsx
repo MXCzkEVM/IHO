@@ -45,9 +45,9 @@ function Page() {
                     <div className="flex justify-center flex-1 flex-col lt-lg:text-center font-600 font-normal">
                       <div className="text-28px font-600 leading-32px lt-lg:leading-18px lt-lg:text-18px">Moonchain Initial Hardware Offering (IHO)</div>
                       <div className="text-56px font-600 leading-60px lt-lg:leading-38px lt-lg:text-36px my-16px">Welcome to the future of free mining hardware!</div>
-                      <div className="text-28px font-600 leading-32px lt-lg:leading-18px lt-lg:text-18px">Choose, LOCK, and MINE REWARDS</div>
+                      <div className="text-28px font-600 leading-32px lt-lg:leading-18px lt-lg:text-18px">CHOOSE, LOCK, and MINE REWARDS</div>
                       <div className="mt-48px">
-                        <Button disabled>COMING SOON</Button>
+                        <Button disabled>Coming Soon</Button>
                       </div>
                     </div>
                     <div className="flex flex-1">

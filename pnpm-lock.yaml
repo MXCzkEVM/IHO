@@ -121,8 +121,8 @@ importers:
         specifier: ^0.4.19
         version: 0.4.19(eslint@9.21.0(jiti@2.4.2))
       harsta:
-        specifier: ^0.10.0
-        version: 0.10.0(n4amqbshd534wongbg2gsmzv6a)
+        specifier: ^0.10.1
+        version: 0.10.1(n4amqbshd534wongbg2gsmzv6a)
       iconify-svgo-loader:
         specifier: ^1.0.5
         version: 1.0.5
@@ -4400,8 +4400,8 @@ packages:
       typescript:
         optional: true
 
-  harsta@0.10.0:
-    resolution: {integrity: sha512-ciUWJHWciRg2nQPCJ4a8lYfphYD9hlK9oxfl/6RT+oR4jwe8x3jGT8tT7fhKtDwGEIsW4V3/kfVUnKSne+qhKQ==}
+  harsta@0.10.1:
+    resolution: {integrity: sha512-aC2mglv6bL46+QBujsXRgNdIFvsD45CBCMJ9PhwMXPFpuabBdhun/kkGxWftLjkMNEIvl23B0RbKdpZGhe3EsQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
 
@@ -12861,7 +12861,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  harsta@0.10.0(n4amqbshd534wongbg2gsmzv6a):
+  harsta@0.10.1(n4amqbshd534wongbg2gsmzv6a):
     dependencies:
       '@clack/prompts': 0.10.0
       '@nomicfoundation/hardhat-toolbox': 5.0.0(5fcvpqw3lzbwcgqtgvhbu4mt2m)
