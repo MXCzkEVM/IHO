@@ -4,16 +4,17 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-// import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 function Header() {
   return (
-    <header className="py-20px items-center flex px-24px">
-      <div className="flex-center gap-12px">
+    <header className="py-30px items-center flex px-30px lg:px-60px relative z1">
+      <div className="absolute w-200px h-300px bg-white blur-200px transform -translate-y-50% -translate-x-50%" />
+
+      <div className="flex-center gap-24px relative z1">
         <a href="https://swap.moonchain.com/">
           <img className="w-140px mr-12px" src="https://explorer.moonchain.com/assets/configs/network_logo_dark.svg" />
         </a>
-        <ul className="lt-lg:hidden flex space-x-4 text-sm text-foreground">
+        <ul className="lt-lg:hidden flex space-x-8 text-sm text-foreground">
           <li className="font-ddin font-semibold uppercase">
             <a href="https://nft.moonchain.com/" target="_blank" rel="noreferrer" className="group rounded transition duration-300 ease-in-out">
               NFT Marketplaces

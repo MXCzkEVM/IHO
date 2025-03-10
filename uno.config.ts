@@ -24,6 +24,7 @@ const config = defineConfig({
   shortcuts: {
     'safe-area': 'pb-[constant(safe-area-inset-bottom)] pb-[env(safe-area-inset-bottom)]',
     'wh-full': 'w-full h-full',
+    'text-shadow-white': 'text-shadow-[#fff_0px_0_5px]',
     'flex-center': 'flex justify-center items-center',
     'flex-col-center': 'flex-center flex-col',
     'flex-x-center': 'flex justify-center',
@@ -58,6 +59,10 @@ const config = defineConfig({
     'ellipsis-text': 'nowrap-hidden overflow-ellipsis',
     'transition-base': 'transition-all duration-300 ease-in-out',
   },
+  rules: [
+    [/^wh-([.\d]+)$/, ([_, num]) => ({ width: `${num}px`, height: `${num}px` })],
+    [/^size-([.\d]+)$/, ([_, num]) => ({ width: `${num}px`, height: `${num}px` })],
+  ],
 })
 
 export default config
