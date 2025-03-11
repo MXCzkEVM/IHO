@@ -7,7 +7,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { Cursor } from '@/components/ui/cursor'
 import { motion } from 'motion/react'
 
 const lineVariants: Variants = {
