@@ -4,13 +4,12 @@ import { config } from '@/config'
 
 import { Injector, useMounted } from '@hairy/react-lib'
 import { darkTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit'
-
 import Head from 'next/head'
 
 import '@unocss/reset/tailwind.css'
 
-import '@/styles/globals.css'
 import '@rainbow-me/rainbowkit/styles.css'
+import '@/styles/globals.css'
 
 export default function App({ Component, pageProps }: any) {
   const layout = Component.layout || defaultLayout

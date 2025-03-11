@@ -7,6 +7,7 @@ const localIconfontLoader = FileSystemSvgoLoader('./assets/iconfonts')
 
 const config = defineConfig({
   presets: [
+
     presetUno({ dark: 'class' }),
     presetAttributify(),
     presetIcons({
@@ -58,6 +59,16 @@ const config = defineConfig({
     'nowrap-hidden': 'whitespace-nowrap overflow-hidden',
     'ellipsis-text': 'nowrap-hidden overflow-ellipsis',
     'transition-base': 'transition-all duration-300 ease-in-out',
+  },
+  theme: {
+    breakpoints: {
+      xs: '0',
+      sm: '576px',
+      md: '768px',
+      lg: '992px',
+      xl: '1200px',
+      xxl: '1920px',
+    },
   },
   rules: [
     [/^wh-([.\d]+)$/, ([_, num]) => ({ width: `${num}px`, height: `${num}px` })],

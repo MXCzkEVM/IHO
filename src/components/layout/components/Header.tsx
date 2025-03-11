@@ -7,12 +7,12 @@ import {
 
 function Header() {
   return (
-    <header className="py-30px items-center flex px-30px lg:px-60px relative z1">
-      <div className="absolute w-200px h-300px bg-white blur-200px transform -translate-y-50% -translate-x-50%" />
+    <header className="py-7.5 items-center flex px-7.5 lg:px-15 relative z1">
+      {/* <div className="absolute w-50 h-75 bg-white blur-50 transform -translate-y-50% -translate-x-50%" /> */}
 
-      <div className="flex-center gap-24px relative z1">
+      <div className="flex-center gap-6 relative z1">
         <a href="https://swap.moonchain.com/">
-          <img className="w-140px mr-12px" src="https://explorer.moonchain.com/assets/configs/network_logo_dark.svg" />
+          <img className="w-35 mr-3" src="https://explorer.moonchain.com/assets/configs/network_logo_dark.svg" />
         </a>
         <ul className="lt-lg:hidden flex space-x-8 text-sm text-foreground">
           <li className="font-ddin font-semibold uppercase">
@@ -42,10 +42,10 @@ function Header() {
         </ul>
       </div>
       <div className="flex-1"></div>
-      <div className="flex gap-12px">
+      <div className="flex gap-3">
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <div className="lg:hidden text-24px i-material-symbols-format-list-bulleted" />
+            <div className="lg:hidden text-6 i-material-symbols-format-list-bulleted" />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuItem>
@@ -74,8 +74,8 @@ function Header() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        {/* <AppearanceSwitch className="text-24px" />
-        <LanguageSwitch className="text-24px" /> */}
+        {/* <AppearanceSwitch className="text-6" />
+        <LanguageSwitch className="text-6" /> */}
       </div>
     </header>
   )

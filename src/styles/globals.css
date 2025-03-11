@@ -1,5 +1,9 @@
 @unocss all;
 
+html {
+  font-size: 0.8333vw;
+}
+
 @font-face {
   font-family: 'BinancePlex';
   font-display: swap;
