@@ -1,7 +1,9 @@
 @unocss all;
 
-html {
-  font-size: 0.8333vw;
+html,
+body {
+  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 
 @font-face {

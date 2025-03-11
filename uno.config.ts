@@ -1,13 +1,20 @@
 import FileSystemSvgoLoader from 'iconify-svgo-loader'
-import { defineConfig, presetAttributify, presetIcons, presetTagify, presetUno, transformerAttributifyJsx } from 'unocss'
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetTagify,
+  presetUno,
+  transformerAttributifyJsx,
+} from 'unocss'
 import presetAnimations from 'unocss-preset-animations'
 import { presetShadcn } from 'unocss-preset-shadcn'
+import { presetEmUnit } from './plugins/presetEmUnit'
 
 const localIconfontLoader = FileSystemSvgoLoader('./assets/iconfonts')
 
 const config = defineConfig({
   presets: [
-
     presetUno({ dark: 'class' }),
     presetAttributify(),
     presetIcons({
@@ -18,11 +25,14 @@ const config = defineConfig({
       color: { base: 'gray' },
     }),
     presetTagify(),
+    presetEmUnit(),
   ],
   transformers: [
     transformerAttributifyJsx(),
   ],
   shortcuts: {
+    'text-auto': 'text-[0.8333vw]',
+    'text-auto-clamp': 'text-[clamp(12px,0.8333vw,24px)]',
     'safe-area': 'pb-[constant(safe-area-inset-bottom)] pb-[env(safe-area-inset-bottom)]',
     'wh-full': 'w-full h-full',
     'text-shadow-white': 'text-shadow-[#fff_0px_0_5px]',
@@ -71,8 +81,9 @@ const config = defineConfig({
     },
   },
   rules: [
-    [/^wh-([.\d]+)$/, ([_, num]) => ({ width: `${num}px`, height: `${num}px` })],
-    [/^size-([.\d]+)$/, ([_, num]) => ({ width: `${num}px`, height: `${num}px` })],
+
+    [/^wh-([.\d]+)$/, ([_, num]) => ({ width: `${+num / 4}rem`, height: `${+num / 4}rem` })],
+    [/^size-([.\d]+)$/, ([_, num]) => ({ width: `${+num / 4}rem`, height: `${+num / 4}rem` })],
   ],
 })
 
