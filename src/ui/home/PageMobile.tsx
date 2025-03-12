@@ -22,4 +22,3 @@ export function PageMobile(props: DetailedHTMLProps) {
     </div>
   )
 }
-
