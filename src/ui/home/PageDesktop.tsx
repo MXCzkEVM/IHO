@@ -3,18 +3,18 @@ import Footer from '@/components/layout/components/Footer'
 import Header from '@/components/layout/components/Header'
 import { cn } from '@/utils'
 import { Accordions } from './components/Accordions'
-import { PageMobileGraphic } from './PageMobileGraphic'
-import { PageMobileHero } from './PageMobileHero'
+import { PageGraphic } from './PageGraphic'
+import { PageHero } from './PageHero'
 
-export function PageMobile(props: DetailedHTMLProps) {
+export function PageDesktop(props: DetailedHTMLProps) {
   return (
-    <div className={cn('text-2.1vw flex-col', props.className)}>
-      <div className="absolute w-full">
+    <div className={cn('text-auto flex-col', props.className)}>
+      <div className="absolute w-full ">
         <Header />
-        <PageMobileHero />
+        <PageHero />
       </div>
 
-      <PageMobileGraphic />
+      <PageGraphic />
 
       <Accordions />
 
@@ -22,4 +22,3 @@ export function PageMobile(props: DetailedHTMLProps) {
     </div>
   )
 }
-
