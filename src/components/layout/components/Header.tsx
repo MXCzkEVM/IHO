@@ -4,6 +4,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 function Header() {
   return (
@@ -74,6 +75,7 @@ function Header() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        <ConnectButton />
         {/* <AppearanceSwitch className="text-6" />
         <LanguageSwitch className="text-6" /> */}
       </div>
