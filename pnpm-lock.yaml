@@ -100,8 +100,8 @@ importers:
         specifier: ^0.5.5
         version: 0.5.5
       '@genapi/swag-fetch-ts':
-        specifier: ^1.1.7
-        version: 1.1.7(@swc/helpers@0.5.15)
+        specifier: ^1.1.9
+        version: 1.1.9(@swc/helpers@0.5.15)
       '@hairy/lnv':
         specifier: ^5.5.0
         version: 5.5.0
@@ -1044,8 +1044,8 @@ packages:
     peerDependencies:
       '@genapi/core': '*'
 
-  '@genapi/swag-fetch-ts@1.1.7':
-    resolution: {integrity: sha512-ZtC+IZb2cRNkAh3ewkmgdqEn+3yYsUgPnkp6Ej56F7+Ic3RDcO/hMEqOSDVtfDaJxD5k+/5EOVeKv4qy2XtfZQ==}
+  '@genapi/swag-fetch-ts@1.1.9':
+    resolution: {integrity: sha512-OIh/mBuda52hMBIgo1ZhwdjEENzyrkrlGVNU8qS4B7NcceBbdV8w8psk8g3P3F7kEGN8MGFVM/WTP/0XvDxmOA==}
 
   '@genapi/swag-parser@1.1.6':
     resolution: {integrity: sha512-VvoeNS+cARqNhzsQuAhEKvuV7OKCcCO/zMJqT5a7V0kUlrSxvr93lRFR/OaqWKZVk1/QoXeeWVh6zSIKRaHQZw==}
@@ -8736,7 +8736,7 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@genapi/swag-fetch-ts@1.1.7(@swc/helpers@0.5.15)':
+  '@genapi/swag-fetch-ts@1.1.9(@swc/helpers@0.5.15)':
     dependencies:
       '@genapi/config': 0.5.5
       '@genapi/core': 0.5.5

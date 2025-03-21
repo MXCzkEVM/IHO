@@ -14,10 +14,8 @@ export function WagmiConfigProvider(props: PropsWithChildren<WagmiProviderProps>
   const store = useSnapshot(cache)
 
   useFetchRequestIntercept((fetch, input, init) => {
-    return fetch(input, {
-      headers: Object.assign({ token: store.token }, init?.headers),
-      ...init,
-    })
+    const headers = Object.assign({ token: store.token }, init?.headers)
+    return fetch(input, { ...init, headers })
   })
 
   useFetchResponseIntercept(async (response) => {

@@ -7,6 +7,7 @@ export default antfu({
     'react-hooks/exhaustive-deps': 'off',
     'react/no-unstable-context-value': 'off',
     'react-refresh/only-export-components': 'off',
+    'node/prefer-global/process': 'off',
     'react-dom/no-missing-button-type': 'off',
     'react/prefer-destructuring-assignment': 'off',
   },
