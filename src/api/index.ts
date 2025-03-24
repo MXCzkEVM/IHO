@@ -25,6 +25,7 @@ export async function getUserNonce(config?: RequestInit) {
  */
 export async function postUserVerify(body: Types.VerifyDto, config?: RequestInit) {
   const response = await fetch(`${baseURL}/user/verify`, {
+    headers: { 'Content-Type': 'application/json' },
     method: 'post',
     body: JSON.stringify(body),
     ...config,
@@ -67,11 +68,14 @@ export async function getUser(headers?: Types.GetUserHeader, config?: RequestIni
  * @method put
  * @tags User
  */
-export async function putUser(body: string, headers?: Types.PutUserHeader, config?: RequestInit) {
+export async function putUser(body: Types.CustomerUpdateDto, headers?: Types.PutUserHeader, config?: RequestInit) {
   const response = await fetch(`${baseURL}/user`, {
     method: 'put',
     body: JSON.stringify(body),
-    headers,
+    headers: {
+      'Content-Type': 'application/json',
+      ...headers,
+    },
     ...config,
   })
   return response

@@ -4,7 +4,7 @@ import { proxyWithPersistant } from '@/hooks'
 import { createAuthenticationAdapter } from '@rainbow-me/rainbowkit'
 import { createSiweMessage } from 'viem/siwe'
 
-export const cache = proxyWithPersistant('authentication', {
+const cache = proxyWithPersistant('authentication', {
   address: '',
   status: 'unauthenticated' as 'unauthenticated' | 'loading' | 'authenticated',
   token: '',

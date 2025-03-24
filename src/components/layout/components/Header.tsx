@@ -1,12 +1,18 @@
+import { SettingsDialog } from '@/components'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { If } from '@hairy/react-lib'
+import { useOverlayInject } from '@overlastic/react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
+import { useAccount } from 'wagmi'
 
 function Header() {
+  const openSettingsDialog = useOverlayInject(SettingsDialog)
+  const { isConnected } = useAccount()
   return (
     <header className="py-7.5 items-center flex px-7.5 lg:px-15 relative z1">
       {/* <div className="absolute w-50 h-75 bg-white blur-50 transform -translate-y-50% -translate-x-50%" /> */}
@@ -43,7 +49,7 @@ function Header() {
         </ul>
       </div>
       <div className="flex-1"></div>
-      <div className="flex gap-3">
+      <div className="flex-center gap-3">
         <DropdownMenu>
           <DropdownMenuTrigger>
             <div className="lg:hidden text-6 i-material-symbols-format-list-bulleted" />
@@ -75,7 +81,15 @@ function Header() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <ConnectButton />
+        <div className="lg:hidden">
+          <ConnectButton chainStatus={{ smallScreen: 'none' }} accountStatus={{ smallScreen: 'avatar' }} />
+        </div>
+        <div className="lt-lg:hidden">
+          <ConnectButton chainStatus={{ smallScreen: 'none' }} />
+        </div>
+        <If cond={isConnected}>
+          <div font-size="5" className="cursor-pointer i-lucide-settings" onClick={openSettingsDialog} />
+        </If>
         {/* <AppearanceSwitch className="text-6" />
         <LanguageSwitch className="text-6" /> */}
       </div>

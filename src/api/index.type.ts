@@ -53,6 +53,23 @@ export interface Customer {
   meta_data: string[];
   _links: string[];
 }
+export interface CustomerUpdateDto {
+  date_created?: string;
+  date_created_gmt?: string;
+  date_modified?: string;
+  date_modified_gmt?: string;
+  email?: string;
+  first_name?: string;
+  last_name?: string;
+  billing?: Billing;
+  shipping?: Shipping;
+  role?: string;
+  username?: string;
+  is_paying_customer?: boolean;
+  avatar_url?: string;
+  meta_data?: string[];
+  _links?: string[];
+}
 export interface GetUserInspectHeader {
   token?: string;
   [key: string]: any;

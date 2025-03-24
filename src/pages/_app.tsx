@@ -1,11 +1,12 @@
 import type { ReactNode } from 'react'
-import { Layout, WagmiConfigProvider } from '@/components'
+import { BootstrapProvider, Layout, WagmiConfigProvider } from '@/components'
 import { config } from '@/config'
 
 import { Injector, useMounted } from '@hairy/react-lib'
+import { OverlaysProvider } from '@overlastic/react'
 import { darkTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit'
+import { Button, ConfigProvider, theme } from 'antd'
 import Head from 'next/head'
-
 import '@unocss/reset/tailwind.css'
 
 import '@rainbow-me/rainbowkit/styles.css'
@@ -27,6 +28,9 @@ export default function App({ Component, pageProps }: any) {
         install={[
           { component: WagmiConfigProvider, props: { config } },
           { component: RainbowKitProvider, props: { theme: darkTheme({ accentColor: '#234F9B' }) } },
+          { component: ConfigProvider, props: { theme: { algorithm: theme.darkAlgorithm, token: { colorPrimary: '#234F9B' } } } },
+          { component: BootstrapProvider },
+          { component: OverlaysProvider },
         ]}
       >
         {mounted && layout(<Component {...pageProps} />)}

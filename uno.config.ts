@@ -22,7 +22,7 @@ const config = defineConfig({
     }),
     presetAnimations(),
     presetShadcn({
-      color: { base: 'gray' },
+      color: { base: 'zinc' },
     }),
     presetTagify(),
     presetEmUnit(),
