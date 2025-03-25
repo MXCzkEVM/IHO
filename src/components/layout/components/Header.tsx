@@ -1,3 +1,4 @@
+import type { PropWithHtmlProps } from '@hairy/react-lib'
 import { SettingsDialog } from '@/components'
 import {
   DropdownMenu,
@@ -5,16 +6,17 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
+import { cn } from '@/utils'
 import { If } from '@hairy/react-lib'
 import { useOverlayInject } from '@overlastic/react'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount } from 'wagmi'
 
-function Header() {
+function Header(props: PropWithHtmlProps) {
   const openSettingsDialog = useOverlayInject(SettingsDialog)
   const { isConnected } = useAccount()
   return (
-    <header className="py-7.5 items-center flex px-7.5 lg:px-15 relative z1">
+    <header className={cn('py-7.5 items-center flex px-7.5 lg:px-15 relative z1', props.className)}>
       {/* <div className="absolute w-50 h-75 bg-white blur-50 transform -translate-y-50% -translate-x-50%" /> */}
 
       <div className="flex-center gap-6 relative z1">

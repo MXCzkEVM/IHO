@@ -1,9 +1,11 @@
 import { motion } from 'motion/react'
+import { useRouter } from 'next/router'
 import { variants } from './config'
 
 export function PageHero() {
+  const router = useRouter()
   return (
-    <motion.div variants={variants.opacity} initial="hidden" whileInView="visible" className="relative z1 mx-37.5em" md="mt-30px" lg="mt-62.5em">
+    <motion.div variants={variants.opacity} initial="hidden" whileInView="visible" className="relative z1 mx-37.5em text-auto" md="mt-30px" lg="mt-62.5em">
       <div className="text-8em mb-10em font-800 text-shadow-white">
         Initial Hardware Offering (IHO)
       </div>
@@ -16,7 +18,7 @@ export function PageHero() {
       <div className="relative w-100% lg:w-55.5em">
         <motion.button
           initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 0.5, scale: 1 }}
+          animate={{ opacity: 1, scale: 1 }}
           whileHover={{ scale: 1.2 }}
           transition={{
             duration: 0.4,
@@ -26,9 +28,10 @@ export function PageHero() {
               bounce: 0.5,
             },
           }}
-          className="w-100% h-18em flex-center border-2px border-solid border-white opacity-50 relative z-1"
+          className="w-100% h-18em flex-center border-2px border-solid border-white relative z-1"
+          onClick={() => router.push('products')}
         >
-          <span className="text-6em font-700">COMING SOON</span>
+          <span className="text-6em font-700">Get Started</span>
         </motion.button>
       </div>
     </motion.div>

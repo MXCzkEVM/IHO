@@ -6,7 +6,7 @@ import Main from './components/Main'
 
 export function Layout(props: PropsWithChildren) {
   return (
-    <Container className="container mx-auto relative">
+    <Container className="mx-auto relative">
       <Header />
       <Main children={props.children} />
       <Footer />

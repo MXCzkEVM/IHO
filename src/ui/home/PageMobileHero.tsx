@@ -1,6 +1,9 @@
 import { motion } from 'motion/react'
+import { useRouter } from 'next/router'
 
 export function PageMobileHero() {
+  const router = useRouter()
+
   return (
     <div className="mx-13.75em">
       <div mb="6em" text="8em shadow-white" font="800">
@@ -14,7 +17,7 @@ export function PageMobileHero() {
       </div>
       <motion.button
         initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 0.5, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{
           duration: 0.4,
           scale: {
@@ -23,9 +26,10 @@ export function PageMobileHero() {
             bounce: 0.5,
           },
         }}
-        className="w-100% h-18em flex-center border-2px border-solid border-white opacity-50 relative z-1"
+        className="w-100% h-18em flex-center border-2px border-solid border-white relative z-1"
+        onClick={() => router.push('products')}
       >
-        <span className="text-6em font-700">COMING SOON</span>
+        <span className="text-6em font-700">Get Started</span>
       </motion.button>
     </div>
   )
