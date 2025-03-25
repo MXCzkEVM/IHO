@@ -1,15 +1,14 @@
 import type { FormInstance, FormProps, InputProps } from 'antd'
 import type { ChangeEvent } from 'react'
-import { getUser, putUser } from '@/api'
+import { putUser } from '@/api'
 import { Button } from '@/components/ui/button'
-import { defineAsyncStore } from '@/hooks'
+import { useStoreUser } from '@/store'
 import { useAsyncCallback, useWhenever } from '@hairy/react-lib'
 import { isEqual } from '@hairy/utils'
 import { Form, Input, Select, Spin } from 'antd'
 import { useMemo } from 'react'
 import { defaultAddress, regions } from './config'
 import { findMobilePrefix, parsePhone } from './utils'
-import { useStoreUser } from '@/store'
 
 export interface FieldType {
   firstName?: string
@@ -22,7 +21,6 @@ export interface FieldType {
 
 export function ShippingAddressForm() {
   const [{ value: user, loading }, _, resetUser] = useStoreUser()
-
   const [loadFinish, onFinish] = useAsyncCallback(async (_values: Required<FieldType>) => {
     const values = { ..._values }
 

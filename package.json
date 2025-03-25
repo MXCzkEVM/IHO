@@ -13,9 +13,9 @@
     "postinstall": "harsta compile"
   },
   "dependencies": {
-    "@hairy/ether-lib": "^1.6.2",
-    "@hairy/react-lib": "^1.6.2",
-    "@hairy/utils": "^1.6.2",
+    "@hairy/ether-lib": "^1.7.3",
+    "@hairy/react-lib": "^1.7.3",
+    "@hairy/utils": "^1.7.3",
     "@harsta/client": "^0.10.0",
     "@overlastic/react": "^0.8.1",
     "@radix-ui/react-accordion": "^1.2.3",

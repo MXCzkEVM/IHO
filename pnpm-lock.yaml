@@ -9,14 +9,14 @@ importers:
   .:
     dependencies:
       '@hairy/ether-lib':
-        specifier: ^1.6.2
-        version: 1.6.2(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))
+        specifier: ^1.7.3
+        version: 1.7.3(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))
       '@hairy/react-lib':
-        specifier: ^1.6.2
-        version: 1.6.2(react-dom@18.3.1(react@18.3.1))(react-i18next@14.1.3(i18next@24.2.2(typescript@5.7.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        specifier: ^1.7.3
+        version: 1.7.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react-i18next@14.1.3(i18next@24.2.2(typescript@5.7.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@hairy/utils':
-        specifier: ^1.6.2
-        version: 1.6.2
+        specifier: ^1.7.3
+        version: 1.7.3
       '@harsta/client':
         specifier: ^0.10.0
         version: 0.10.0(bufferutil@4.0.9)(react@18.3.1)(utf-8-validate@5.0.10)(viem@2.23.12(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10))(wagmi@2.14.12(@tanstack/query-core@5.66.4)(@tanstack/react-query@5.66.9(react@18.3.1))(@types/react@18.3.18)(bufferutil@4.0.9)(immer@10.0.2)(react@18.3.1)(typescript@5.7.3)(utf-8-validate@5.0.10)(viem@2.23.12(bufferutil@4.0.9)(typescript@5.7.3)(utf-8-validate@5.0.10)))
@@ -1108,8 +1108,8 @@ packages:
   '@genapi/swag-parser@1.1.6':
     resolution: {integrity: sha512-VvoeNS+cARqNhzsQuAhEKvuV7OKCcCO/zMJqT5a7V0kUlrSxvr93lRFR/OaqWKZVk1/QoXeeWVh6zSIKRaHQZw==}
 
-  '@hairy/ether-lib@1.6.2':
-    resolution: {integrity: sha512-XGc0ridXF0JdmOEZ78y2+kF2lSUwnH+RsVj8eFa69Bou/u7DRZ6Dm7r7y15ovJlU/qR/EdsiIHUE9qlXnVnX/Q==}
+  '@hairy/ether-lib@1.7.3':
+    resolution: {integrity: sha512-nXz28vYb4Sw+e87jsIGoQr1/qr3qJgdjYnFR+vcXca47y48b6WLY1iF6QXZPhEeDhNtjx0XD0nnLAbV5H47e6g==}
     peerDependencies:
       ethers: '>=6'
 
@@ -1117,15 +1117,15 @@ packages:
     resolution: {integrity: sha512-v2Md/EJVaPUfc2LGO8ik/3Ea2QqMx6t0Wp4Skm9mgpdYp/0I+5rPAGdg/i1TWbrrTIq+KFiSeD6C8qeh1bVIeQ==}
     hasBin: true
 
-  '@hairy/react-lib@1.6.2':
-    resolution: {integrity: sha512-WTfJ6nn4sd5fLryXEO9g2WZRhSlIZVubbZ8k/9DqhOspvO4lfreUdw9CjAuR9UKbELpsGKI6snGroPxJxgJV3w==}
+  '@hairy/react-lib@1.7.3':
+    resolution: {integrity: sha512-oc4anolSMhhHCHTBNI+LUTiW8PNEBlHSSSDKQD5nXrckDecDjQJAa1bd73EckRrg6dLjraesl0tBOQjrK4zw2A==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
       react-i18next: ^14.1.2
 
-  '@hairy/utils@1.6.2':
-    resolution: {integrity: sha512-nTszUWELgScaZLjJfLNiugdrSs/vrYsxof0WstizfYgNozHQceq8IN9NrmVEvSrwG66CJNmLxsWfdvEzkQtnIw==}
+  '@hairy/utils@1.7.3':
+    resolution: {integrity: sha512-kN3Q2Bd5jw37nSO3SpOEE+u49DDPSe2sP2nDPsCj3+3zLEVyDysZjP3/LOXnN/3Mpe7jIIm1r+Dt6Ldi4yUOhQ==}
 
   '@harsta/client@0.10.0':
     resolution: {integrity: sha512-37MFDoTM6bNDKdudNq/oOezyd+CSTN/5LNHFMjP7fKSqy/rbYOk7yMdxnpP33UufOYGf1tV3Kt0HTFZ3LqIPuw==}
@@ -9215,9 +9215,9 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@hairy/ether-lib@1.6.2(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
+  '@hairy/ether-lib@1.7.3(ethers@6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10))':
     dependencies:
-      '@hairy/utils': 1.6.2
+      '@hairy/utils': 1.7.3
       ethers: 6.13.5(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       mitt: 3.0.1
 
@@ -9230,15 +9230,18 @@ snapshots:
       pathe: 2.0.3
       yargs: 17.7.2
 
-  '@hairy/react-lib@1.6.2(react-dom@18.3.1(react@18.3.1))(react-i18next@14.1.3(i18next@24.2.2(typescript@5.7.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
+  '@hairy/react-lib@1.7.3(@types/react@18.3.18)(react-dom@18.3.1(react@18.3.1))(react-i18next@14.1.3(i18next@24.2.2(typescript@5.7.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)':
     dependencies:
       html-parse-stringify: 3.0.1
       mitt: 3.0.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-i18next: 14.1.3(i18next@24.2.2(typescript@5.7.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      valtio: 2.1.4(@types/react@18.3.18)(react@18.3.1)
+    transitivePeerDependencies:
+      - '@types/react'
 
-  '@hairy/utils@1.6.2':
+  '@hairy/utils@1.7.3':
     dependencies:
       '@types/lodash-es': 4.17.12
       bignumber.js: 9.1.2

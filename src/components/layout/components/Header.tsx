@@ -19,7 +19,7 @@ function Header() {
 
       <div className="flex-center gap-6 relative z1">
         <a href="https://swap.moonchain.com/">
-          <img className="w-35 mr-3" src="https://explorer.moonchain.com/assets/configs/network_logo_dark.svg" />
+          <img className="w-35 mr-3" src="https://raw.githubusercontent.com/MXCzkEVM/metadata/refs/heads/main/emblem-dark.svg" />
         </a>
         <ul className="lt-lg:hidden flex space-x-8 text-sm text-foreground">
           <li className="font-ddin font-semibold uppercase">

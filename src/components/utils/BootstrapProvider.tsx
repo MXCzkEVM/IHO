@@ -1,12 +1,10 @@
 import type { PropsWithChildren } from 'react'
-import { authenticationAdapter } from '@/config'
+import store, { useStoreUser } from '@/store'
 import { parseTryJson } from '@/utils'
-import { useFetchRequestIntercept, useFetchResponseIntercept, useWhenever } from '@hairy/react-lib'
-import { useSnapshot } from 'valtio'
-import { useStoreUser } from '@/store'
+import { useFetchRequestIntercept, useFetchResponseIntercept, useStore, useWhenever } from '@hairy/react-lib'
 
 export function BootstrapProvider(props: PropsWithChildren) {
-  const authentication = useSnapshot(authenticationAdapter.cache)
+  const authentication = useStore(store.authentication)
   const fetchUser = useStoreUser()[1]
 
   useFetchRequestIntercept((fetch, input, init) => {
@@ -24,7 +22,7 @@ export function BootstrapProvider(props: PropsWithChildren) {
     return response
   })
 
-  useWhenever(authentication.token, fetchUser, {immediate: true})
+  useWhenever(authentication.token, fetchUser, { immediate: true })
 
   return props.children
 }

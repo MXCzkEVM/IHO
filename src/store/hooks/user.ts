@@ -1,5 +1,5 @@
 import { getUser } from '@/api'
-import { defineAsyncStorePlain } from '@/hooks'
+import { defineAsyncStorePlain } from '@hairy/react-lib'
 
 export const useStoreUser = defineAsyncStorePlain(
   async () => {
@@ -13,5 +13,5 @@ export const useStoreUser = defineAsyncStorePlain(
       phone: customer.billing?.phone,
     }
   },
-  { persistent: 'customer' },
+  { persistant: 'user' },
 )
