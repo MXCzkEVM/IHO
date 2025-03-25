@@ -52,6 +52,7 @@
     "@genapi/cli": "^0.5.5",
     "@genapi/swag-fetch-ts": "^1.1.9",
     "@hairy/lnv": "^5.5.0",
+    "@iconify-json/eos-icons": "^1.2.2",
     "@iconify-json/iconamoon": "^1.2.2",
     "@iconify-json/line-md": "^1.2.5",
     "@iconify-json/lucide": "^1.2.24",

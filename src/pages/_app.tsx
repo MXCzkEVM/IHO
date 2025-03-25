@@ -5,7 +5,7 @@ import { config } from '@/config'
 import { Injector, useMounted } from '@hairy/react-lib'
 import { OverlaysProvider } from '@overlastic/react'
 import { darkTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit'
-import { Button, ConfigProvider, theme } from 'antd'
+import { ConfigProvider, theme } from 'antd'
 import Head from 'next/head'
 import '@unocss/reset/tailwind.css'
 

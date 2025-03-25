@@ -1,26 +1,61 @@
 import { getProduct } from '@/api'
-import { useAsyncState } from '@hairy/react-lib'
-import { Card } from 'antd'
+import { Else, If, Then, useAsyncState } from '@hairy/react-lib'
+import { Card, List } from 'antd'
 import Meta from 'antd/es/card/Meta'
+import { motion } from 'motion/react'
 
 function Page() {
-  const [{ value = [] }] = useAsyncState(
+  const [{ value = [], loading }] = useAsyncState(
     () => getProduct(),
     [],
     { immediate: true },
   )
+
   return (
-    <div className="flex gap-10 flex-wrap w-full px-12">
-      {value.map((product: any) => (
-        <Card
-          key={product.id}
-          hoverable
-          className="w-80"
-          cover={<img className="object-cover h-50" alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
-        >
-          <Meta title={product.name} description={product.description} />
-        </Card>
-      ))}
+    <div className="px-8">
+      <If cond={!loading}>
+        <Then>
+          <motion.div className="lt-lg:hidden flex gap-10 flex-wrap">
+            {value.map((product: any) => (
+              <motion.div
+                key={product.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+              >
+                <Card
+                  hoverable
+                  className="w-80"
+                  cover={<img className="object-cover h-50 p-1" alt="example" src={product.image} />}
+                >
+                  <Meta title={product.name} description={product.description} />
+                </Card>
+              </motion.div>
+
+            ))}
+          </motion.div>
+          <List
+            className="lg:hidden"
+            itemLayout="horizontal"
+            dataSource={[...value, ...value, ...value, ...value]}
+            renderItem={(product: any, index) => (
+              <List.Item key={index}>
+                <List.Item.Meta
+                  avatar={<img className="object-cover h-24 p-1 rounded-lg" alt="example" src={product.image} />}
+                  title={product.name}
+                  description={product.description}
+                />
+              </List.Item>
+            )}
+          />
+        </Then>
+        <Else>
+          <div className="flex-center mt-45">
+
+            <div className="i-eos-icons-bubble-loading text-18 text-white text-op-50" />
+          </div>
+        </Else>
+      </If>
     </div>
   )
 }

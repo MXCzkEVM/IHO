@@ -20,7 +20,7 @@ function Header(props: PropWithHtmlProps) {
       {/* <div className="absolute w-50 h-75 bg-white blur-50 transform -translate-y-50% -translate-x-50%" /> */}
 
       <div className="flex-center gap-6 relative z1">
-        <a href="https://swap.moonchain.com/">
+        <a href="/">
           <img className="w-35 mr-3" src="https://raw.githubusercontent.com/MXCzkEVM/metadata/refs/heads/main/emblem-dark.svg" />
         </a>
         <ul className="lt-lg:hidden flex space-x-8 text-sm text-foreground">
