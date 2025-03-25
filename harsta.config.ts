@@ -1,6 +1,10 @@
 import { defineConfig } from 'harsta'
 
 const config = defineConfig({
+  solidity: {
+    settings: { evmVersion: 'shanghai' },
+    version: '0.8.24',
+  },
   networks: {
     geneva: {
       name: 'Moonchain',
@@ -23,6 +27,17 @@ const config = defineConfig({
       explorer: {
         name: 'etherscan',
         url: 'https://explorer.moonchain.com',
+      },
+    },
+  },
+  deployments: {
+    IHO: {
+      kind: 'uups',
+      async args({ getNamedAccount, getUnnamedAccount }) {
+        return [
+          await getNamedAccount('owner') || await getUnnamedAccount(),
+          await getNamedAccount('verifier') || await getUnnamedAccount(),
+        ]
       },
     },
   },
