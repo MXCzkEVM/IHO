@@ -20,7 +20,6 @@ import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { WagmiProvider } from 'wagmi'
-import '@/styles/globals.css'
 
 const antdDarkTheme = {
   algorithm: antdTheme.darkAlgorithm,
@@ -33,7 +32,7 @@ const antdLightTheme = {
 
 const adapter = createAuthenticationAdapter(store.authentication.$actions)
 
-export function InjectsProvider(props: PropsWithChildren) {
+export function ProviderInjects(props: PropsWithChildren) {
   const authentication = useStore(store.authentication)
   const client = new QueryClient()
   const router = useRouter()

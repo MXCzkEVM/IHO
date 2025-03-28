@@ -11,7 +11,7 @@ import {
 } from '@hairy/react-lib'
 import { jsonTryParse } from '@hairy/utils'
 
-export function BootstrapProvider(props: PropsWithChildren) {
+export function ProviderBootstrap(props: PropsWithChildren) {
   const authentication = useStore(store.authentication)
   const fetchUser = useStoreUser()[1]
 
