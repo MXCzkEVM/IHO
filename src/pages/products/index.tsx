@@ -3,8 +3,10 @@ import { Else, If, Then, useAsyncState } from '@hairy/react-lib'
 import { Card, List } from 'antd'
 import Meta from 'antd/es/card/Meta'
 import { motion } from 'motion/react'
+import { useRouter } from 'next/router'
 
 function Page() {
+  const router = useRouter()
   const [{ value = [], loading }] = useAsyncState(
     () => getProduct(),
     [],
@@ -12,7 +14,7 @@ function Page() {
   )
 
   return (
-    <div className="px-8">
+    <div className="px-7.5 lg:px-15">
       <If cond={!loading}>
         <Then>
           <motion.div className="lt-lg:hidden flex gap-10 flex-wrap">
@@ -22,6 +24,7 @@ function Page() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4 }}
+                onClick={() => router.push(`/products/${product.id}`)}
               >
                 <Card
                   hoverable
@@ -39,7 +42,7 @@ function Page() {
             itemLayout="horizontal"
             dataSource={[...value, ...value, ...value, ...value]}
             renderItem={(product: any, index) => (
-              <List.Item key={index}>
+              <List.Item key={index} onClick={() => router.push(`/products/${product.id}`)}>
                 <List.Item.Meta
                   avatar={<img className="object-cover h-24 p-1 rounded-lg" alt="example" src={product.image} />}
                   title={product.name}

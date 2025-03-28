@@ -8,10 +8,10 @@ export const useStoreUser = defineAsyncStorePlain(
       firstName: customer.first_name,
       lastName: customer.last_name,
       address: customer.billing?.address_1,
-      region: customer.billing?.country,
+      region: customer.billing?.country || undefined,
       email: customer.billing?.email,
       phone: customer.billing?.phone,
     }
   },
-  { persistant: 'user' },
+  { },
 )

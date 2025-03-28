@@ -7,10 +7,12 @@ import { OverlaysProvider } from '@overlastic/react'
 import { darkTheme, RainbowKitProvider } from '@rainbow-me/rainbowkit'
 import { ConfigProvider, theme } from 'antd'
 import Head from 'next/head'
+import React from 'react'
 import '@unocss/reset/tailwind.css'
-
 import '@rainbow-me/rainbowkit/styles.css'
 import '@/styles/globals.css'
+
+React.useLayoutEffect = React.useEffect
 
 export default function App({ Component, pageProps }: any) {
   const layout = Component.layout || defaultLayout

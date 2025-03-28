@@ -51,8 +51,8 @@
   "devDependencies": {
     "@antfu/eslint-config": "^4.3.0",
     "@eslint-react/eslint-plugin": "^1.28.0",
-    "@genapi/cli": "^0.5.5",
-    "@genapi/swag-fetch-ts": "^1.1.9",
+    "@genapi/cli": "^0.5.6",
+    "@genapi/swag-fetch-ts": "^1.1.10",
     "@hairy/lnv": "^5.5.0",
     "@iconify-json/eos-icons": "^1.2.2",
     "@iconify-json/iconamoon": "^1.2.2",

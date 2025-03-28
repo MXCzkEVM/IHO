@@ -1,11 +1,10 @@
 import type { FormInstance, FormProps, InputProps } from 'antd'
 import type { ChangeEvent } from 'react'
 import { putUser } from '@/api'
-import { Button } from '@/components/ui/button'
 import { useStoreUser } from '@/store'
 import { useAsyncCallback, useWhenever } from '@hairy/react-lib'
 import { isEqual } from '@hairy/utils'
-import { Form, Input, Select, Spin } from 'antd'
+import { Button, Form, Input, Select, Spin } from 'antd'
 import { useMemo } from 'react'
 import { defaultAddress, regions } from './config'
 import { findMobilePrefix, parsePhone } from './utils'
@@ -146,7 +145,7 @@ export function ShippingAddressForm() {
           <Input.TextArea placeholder="Please enter your shipping address" count={{ max: 200 }} />
         </Form.Item>
         <Form.Item className="flex justify-end mb-0">
-          <Button size="sm" disabled={equal} loading={loadFinish}>
+          <Button disabled={equal} loading={loadFinish}>
             Save
           </Button>
         </Form.Item>

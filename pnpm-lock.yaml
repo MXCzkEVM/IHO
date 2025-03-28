@@ -118,11 +118,11 @@ importers:
         specifier: ^1.28.0
         version: 1.28.0(eslint@9.21.0(jiti@2.4.2))(ts-api-utils@2.0.1(typescript@5.7.3))(typescript@5.7.3)
       '@genapi/cli':
-        specifier: ^0.5.5
-        version: 0.5.5
+        specifier: ^0.5.6
+        version: 0.5.6
       '@genapi/swag-fetch-ts':
-        specifier: ^1.1.9
-        version: 1.1.9(@swc/helpers@0.5.15)
+        specifier: ^1.1.10
+        version: 1.1.10(@swc/helpers@0.5.15)
       '@hairy/lnv':
         specifier: ^5.5.0
         version: 5.5.0
@@ -1096,26 +1096,32 @@ packages:
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
-  '@genapi/cli@0.5.5':
-    resolution: {integrity: sha512-3OEzvZmDPv4EiyJvk32xjioXj5pnGY80gNFnZ9fgK4F2g69jpKfxz7ycuWbqRhX8dBUsT5nmru0Z2JsCXJKQaA==}
+  '@genapi/cli@0.5.6':
+    resolution: {integrity: sha512-uCLNrQn2n5fvSXq2wB/Ev4Ba6hbIUuj60OL3InJ3WuDk9bWCP3qKhN7ypVa9TAnRrlpmAx1yq2JaGP1w1UMzPw==}
     hasBin: true
 
   '@genapi/config@0.5.5':
     resolution: {integrity: sha512-2nh5+kX++gJrct6wOzpkucfNhKgqY5LRVvuD9yFtm+2RwEDO2TKyXtHy/KhxNVCqOr03VI8uRrbWohlATFuvoA==}
 
+  '@genapi/config@0.5.6':
+    resolution: {integrity: sha512-EvwRkt6IsMAkQ4uPS01qFJqk/I7C+r+T/vJbz5Hfgm10Sv6DG8i9HBmoqUd2Vca4j6OGp47TOWumIw2RCJaRPg==}
+
   '@genapi/core@0.5.5':
     resolution: {integrity: sha512-kqpuBA3WmqouEwYGv4mOlmv957K7NJttp9hLiA6Lv2egja7ZOI9nEupwSDGsVjz2c43eD0kxScDoal55OWbHxQ==}
 
-  '@genapi/pipeline@2.0.5':
-    resolution: {integrity: sha512-Pjd3CiQU5oKoIVoXX/a6UKVrPvDScD56X9L0oQ/mMPl3QsJ9btVmiF20oWngYf6tagzMMaQqQzLW/teTzLlkBA==}
+  '@genapi/core@0.5.6':
+    resolution: {integrity: sha512-TfgHLz2q+OUZxJe4r47rhX4WQiT5Wlxj6YwsfZ8NFbdVSZ0F0MCw1tZ+01RCANWZfQ7bje0+RJj02w5t51NGyg==}
+
+  '@genapi/pipeline@2.0.6':
+    resolution: {integrity: sha512-edW9Vz2+haUB7/LRYBGMDqxr1FZ4GI6oM4z2YHlqlKFMiAV90G26DT81bQrYTFFn9F6WiR520eUe2z9iPJ9f6A==}
     peerDependencies:
       '@genapi/core': '*'
 
-  '@genapi/swag-fetch-ts@1.1.9':
-    resolution: {integrity: sha512-OIh/mBuda52hMBIgo1ZhwdjEENzyrkrlGVNU8qS4B7NcceBbdV8w8psk8g3P3F7kEGN8MGFVM/WTP/0XvDxmOA==}
+  '@genapi/swag-fetch-ts@1.1.10':
+    resolution: {integrity: sha512-VJ9uwveCKDB3whExJYqZJ27QKE3mw14u583kzSnE3x1i/qp4FZ/lOTpiCOwyuLDpJ8jJuvs+HYXn265bkWdx2Q==}
 
-  '@genapi/swag-parser@1.1.6':
-    resolution: {integrity: sha512-VvoeNS+cARqNhzsQuAhEKvuV7OKCcCO/zMJqT5a7V0kUlrSxvr93lRFR/OaqWKZVk1/QoXeeWVh6zSIKRaHQZw==}
+  '@genapi/swag-parser@1.1.7':
+    resolution: {integrity: sha512-zwZ9uMuYznPXtHlIPE1w28VZzoXYVC9MrGyVBsDqQhjduMiH+b5hrvwph7wk78KOiYAq71zzYtvZVhi519WsHg==}
 
   '@hairy/ether-lib@1.7.3':
     resolution: {integrity: sha512-nXz28vYb4Sw+e87jsIGoQr1/qr3qJgdjYnFR+vcXca47y48b6WLY1iF6QXZPhEeDhNtjx0XD0nnLAbV5H47e6g==}
@@ -8773,10 +8779,10 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
-  '@genapi/cli@0.5.5':
+  '@genapi/cli@0.5.6':
     dependencies:
-      '@genapi/config': 0.5.5
-      '@genapi/core': 0.5.5
+      '@genapi/config': 0.5.6
+      '@genapi/core': 0.5.6
       cac: 6.7.14
       chalk: 5.4.1
       fs-extra: 11.3.0
@@ -8784,6 +8790,8 @@ snapshots:
       unconfig: 0.3.13
 
   '@genapi/config@0.5.5': {}
+
+  '@genapi/config@0.5.6': {}
 
   '@genapi/core@0.5.5':
     dependencies:
@@ -8793,9 +8801,17 @@ snapshots:
       p-pipe: 3.1.0
       unconfig: 0.3.13
 
-  '@genapi/pipeline@2.0.5(@genapi/core@0.5.5)(@swc/helpers@0.5.15)':
+  '@genapi/core@0.5.6':
     dependencies:
-      '@genapi/config': 0.5.5
+      '@genapi/config': 0.5.6
+      jiti: 1.21.7
+      ora: 5.4.1
+      p-pipe: 3.1.0
+      unconfig: 0.3.13
+
+  '@genapi/pipeline@2.0.6(@genapi/core@0.5.5)(@swc/helpers@0.5.15)':
+    dependencies:
+      '@genapi/config': 0.5.6
       '@genapi/core': 0.5.5
       fs-extra: 11.3.0
       got: 11.8.6
@@ -8808,18 +8824,18 @@ snapshots:
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@genapi/swag-fetch-ts@1.1.9(@swc/helpers@0.5.15)':
+  '@genapi/swag-fetch-ts@1.1.10(@swc/helpers@0.5.15)':
     dependencies:
-      '@genapi/config': 0.5.5
+      '@genapi/config': 0.5.6
       '@genapi/core': 0.5.5
-      '@genapi/pipeline': 2.0.5(@genapi/core@0.5.5)(@swc/helpers@0.5.15)
-      '@genapi/swag-parser': 1.1.6(@swc/helpers@0.5.15)
+      '@genapi/pipeline': 2.0.6(@genapi/core@0.5.5)(@swc/helpers@0.5.15)
+      '@genapi/swag-parser': 1.1.7(@swc/helpers@0.5.15)
     transitivePeerDependencies:
       - '@swc/helpers'
 
-  '@genapi/swag-parser@1.1.6(@swc/helpers@0.5.15)':
+  '@genapi/swag-parser@1.1.7(@swc/helpers@0.5.15)':
     dependencies:
-      '@genapi/config': 0.5.5
+      '@genapi/config': 0.5.6
       '@genapi/core': 0.5.5
       fs-extra: 11.3.0
       lodash: 4.17.21

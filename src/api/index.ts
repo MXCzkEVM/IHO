@@ -11,6 +11,46 @@ export const baseURL = process.env.NEXT_PUBLIC_SERVER_URL
 
 /**
  * @method get
+ * @tags Product
+ */
+export async function getProduct(config?: RequestInit) {
+  const response = await fetch(`${baseURL}/product`, {
+    ...config,
+  })
+  return response.json() as Promise<Types.Product[]>
+}
+/**
+ * @method get
+ * @tags Product
+ */
+export async function getProductId(paths: Types.GetProductIdPath, config?: RequestInit) {
+  const response = await fetch(`${baseURL}/product/${paths.id}`, {
+    ...config,
+  })
+  return response.json() as Promise<Types.Product>
+}
+/**
+ * @method get
+ * @tags Order
+ */
+export async function getOrder(config?: RequestInit) {
+  const response = await fetch(`${baseURL}/order`, {
+    ...config,
+  })
+  return response.json() as Promise<Types.Order[]>
+}
+/**
+ * @method post
+ * @tags Order
+ */
+export async function postOrder(config?: RequestInit) {
+  await fetch(`${baseURL}/order`, {
+    method: 'post',
+    ...config,
+  })
+}
+/**
+ * @method get
  * @tags User
  */
 export async function getUserNonce(config?: RequestInit) {
@@ -70,23 +110,10 @@ export async function getUser(headers?: Types.GetUserHeader, config?: RequestIni
  */
 export async function putUser(body: Types.CustomerUpdateDto, headers?: Types.PutUserHeader, config?: RequestInit) {
   const response = await fetch(`${baseURL}/user`, {
+    headers: { 'Content-Type': 'application/json', ...headers },
     method: 'put',
     body: JSON.stringify(body),
-    headers: {
-      'Content-Type': 'application/json',
-      ...headers,
-    },
     ...config,
   })
   return response
-}
-/**
- * @method get
- * @tags Product
- */
-export async function getProduct(config?: RequestInit) {
-  const response = await fetch(`${baseURL}/product`, {
-    ...config,
-  })
-  return response.json() as Promise<any[]>
 }
