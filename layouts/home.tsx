@@ -1,28 +1,26 @@
-import { Navbar } from '@/components/navbar'
+import type { PropWithHtmlProps } from '@hairy/react-lib'
 
-import { fonts } from '@/config/fonts'
+import type { PropsWithChildren } from 'react'
 import clsx from 'clsx'
-
 import { Footer } from './components/footer'
 import { Head } from './components/head'
+import { Navbar } from './components/navbar'
 
-export default function HomeLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function HomeLayout({ children, className }: PropWithHtmlProps<PropsWithChildren>) {
   return (
     <div
-      className={clsx(
-        'relative flex flex-col h-screen',
-        fonts.merriweather.className,
-      )}
+      className={clsx('relative flex flex-col h-screen font-barlow', className)}
     >
       <Head />
       <Navbar className="absolute bg-transparent backdrop-filter-none" />
-
-      <main className="h-full">{children}</main>
-      <Footer />
+      {/* TODO transition with linear-gradient */}
+      <div className="relative">
+        <div className="bg-light dark:bg-dark h-[100vh] w-full absolute top-0" />
+        <main className="container mx-auto max-w-7xl px-6">
+          {children}
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }

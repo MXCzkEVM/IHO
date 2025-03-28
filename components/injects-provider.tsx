@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from 'react'
 import { wagmiConfig } from '@/config/wagmi'
 import store from '@/store'
-import { Injector, useStore } from '@hairy/react-lib'
+import { Injector, useStore, useWatch } from '@hairy/react-lib'
 
 import { HeroUIProvider } from '@heroui/system'
 import { OverlaysProvider } from '@overlastic/react'
@@ -18,25 +18,41 @@ import { theme as antdTheme, ConfigProvider as AntdUIProvider } from 'antd'
 
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
-import React from 'react'
+import React, { useState } from 'react'
 import { WagmiProvider } from 'wagmi'
 
-const antdDarkTheme = {
-  algorithm: antdTheme.darkAlgorithm,
-  token: { colorPrimary: '#234F9B' },
-}
-const antdLightTheme = {
-  algorithm: antdTheme.defaultAlgorithm,
-  token: { colorPrimary: '#234F9B' },
+const themes = {
+  antd: {
+    dark: {
+      algorithm: antdTheme.darkAlgorithm,
+      token: { colorPrimary: '#234F9B' },
+    },
+    light: {
+      algorithm: antdTheme.defaultAlgorithm,
+      token: { colorPrimary: '#234F9B' },
+    },
+  },
+  rainbow: {
+    dark: rainbowDarkTheme({ accentColor: '#006fee' }),
+    light: rainbowLightTheme(),
+  },
 }
 
 const adapter = createAuthenticationAdapter(store.authentication.$actions)
 
-export function ProviderInjects(props: PropsWithChildren) {
+export function InjectsProvider(props: PropsWithChildren) {
   const authentication = useStore(store.authentication)
   const client = new QueryClient()
   const router = useRouter()
-  const theme = useTheme().resolvedTheme
+  const { theme } = useTheme()
+  const [rainbowTheme, setRainbowTheme] = useState(themes.rainbow.dark)
+
+  // fix rainbow theme based on the current theme
+  useWatch(theme, () => {
+    theme === 'dark'
+      ? setRainbowTheme(themes.rainbow.dark)
+      : setRainbowTheme(themes.rainbow.light)
+  }, { immediate: true })
 
   return (
     <Injector
@@ -44,8 +60,8 @@ export function ProviderInjects(props: PropsWithChildren) {
         { component: WagmiProvider, props: { config: wagmiConfig } },
         { component: QueryClientProvider, props: { client } },
         { component: RainbowKitAuthenticationProvider, props: { adapter, status: authentication.status } },
-        { component: RainbowKitProvider, props: { theme: theme === 'dark' ? rainbowDarkTheme() : rainbowLightTheme() } },
-        { component: AntdUIProvider, props: { theme: theme === 'dark' ? antdDarkTheme : antdLightTheme } },
+        { component: RainbowKitProvider, props: { theme: rainbowTheme } },
+        { component: AntdUIProvider, props: { theme: theme === 'dark' ? themes.antd.dark : themes.antd.light } },
         { component: HeroUIProvider, props: { navigate: router.push } },
         { component: OverlaysProvider },
       ]}

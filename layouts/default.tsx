@@ -1,22 +1,14 @@
-import { Navbar } from '@/components/navbar'
+import type { PropsWithChildren } from 'react'
 
-import { fonts } from '@/config/fonts'
 import clsx from 'clsx'
-
 import { Footer } from './components/footer'
 import { Head } from './components/head'
+import { Navbar } from './components/navbar'
 
-export default function DefaultLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function DefaultLayout({ children }: PropsWithChildren) {
   return (
     <div
-      className={clsx(
-        'relative flex flex-col h-screen',
-        fonts.merriweather.className,
-      )}
+      className={clsx('relative flex flex-col h-screen font-merriweather')}
     >
       <Head />
       <Navbar />

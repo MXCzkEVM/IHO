@@ -1,19 +1,16 @@
 import type {
   NavbarProps,
 } from '@heroui/navbar'
+import { ConnectButton } from '@/components/connect-button'
 import {
-  DiscordIcon,
-  GithubIcon,
-  HeartFilledIcon,
-  Logo,
-  SearchIcon,
-  TwitterIcon,
+  SettingIcon,
 } from '@/components/icons'
+import { SettingsDialog } from '@/components/settings-dialog'
 import { ThemeSwitch } from '@/components/theme-switch'
 import { siteConfig } from '@/config/site'
+import { If } from '@hairy/react-lib'
 import { Button } from '@heroui/button'
-import { Input } from '@heroui/input'
-import { Kbd } from '@heroui/kbd'
+
 import { Link } from '@heroui/link'
 import {
   Navbar as HeroUINavbar,
@@ -24,40 +21,27 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from '@heroui/navbar'
-
 import { link as linkStyles } from '@heroui/theme'
+import { useOverlayInject } from '@overlastic/react'
+import { ConnectButton as RainbowConnectButton } from '@rainbow-me/rainbowkit'
+
 import clsx from 'clsx'
 import NextLink from 'next/link'
+import { useAccount } from 'wagmi'
 
 export function Navbar(props: NavbarProps) {
-  const searchInput = (
-    <Input
-      aria-label="Search"
-      classNames={{
-        inputWrapper: 'bg-default-100',
-        input: 'text-sm',
-      }}
-      endContent={(
-        <Kbd className="hidden lg:inline-block" keys={['command']}>
-          K
-        </Kbd>
-      )}
-      labelPlacement="outside"
-      placeholder="Search..."
-      startContent={
-        <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-      }
-      type="search"
-    />
-  )
+  const openSettingsDialog = useOverlayInject(SettingsDialog)
+  const { isConnected } = useAccount()
 
   return (
     <HeroUINavbar maxWidth="xl" position="sticky" {...props}>
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <Logo />
-            <p className="font-bold text-inherit">ACME</p>
+            {/* <Logo /> */}
+            <span className="font-spacex mt-1">
+              MOONCHAIN
+            </span>
           </NextLink>
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
@@ -82,44 +66,44 @@ export function Navbar(props: NavbarProps) {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal href={siteConfig.links.twitter} title="Twitter">
-            <TwitterIcon className="text-default-500" />
-          </Link>
-          <Link isExternal href={siteConfig.links.discord} title="Discord">
-            <DiscordIcon className="text-default-500" />
-          </Link>
-          <Link isExternal href={siteConfig.links.github} title="GitHub">
-            <GithubIcon className="text-default-500" />
-          </Link>
-          <ThemeSwitch />
+        <NavbarItem className="hidden sm:flex">
+          <ConnectButton />
         </NavbarItem>
-        <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-        <NavbarItem className="hidden md:flex">
-          <Button
-            isExternal
-            as={Link}
-            className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
-            startContent={<HeartFilledIcon className="text-danger" />}
-            variant="flat"
-          >
-            Sponsor
-          </Button>
+        <NavbarItem className="hidden sm:flex">
+          <div className="cursor-pointer" onClick={() => openSettingsDialog()}>
+            <SettingIcon className="text-default-600" size={22} />
+          </div>
+        </NavbarItem>
+        <NavbarItem className="hidden sm:flex gap-2">
+          <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
         <ThemeSwitch />
+        <If cond={isConnected}>
+          <NavbarItem>
+            <div className="rainbow-wrapper">
+              <RainbowConnectButton
+                chainStatus={{ smallScreen: 'none' }}
+                accountStatus={{ smallScreen: 'avatar' }}
+              />
+            </div>
+          </NavbarItem>
+        </If>
         <NavbarMenuToggle />
       </NavbarContent>
 
       <NavbarMenu>
-        {searchInput}
-        <div className="mx-4 mt-2 flex flex-col gap-2">
+        <div className="mt-2 flex flex-col gap-3">
+          <NavbarMenuItem>
+            <ConnectButton status={false} />
+          </NavbarMenuItem>
+          <NavbarMenuItem>
+            <Button className="w-full">
+              Contact Us
+            </Button>
+          </NavbarMenuItem>
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
@@ -130,7 +114,7 @@ export function Navbar(props: NavbarProps) {
                       ? 'danger'
                       : 'foreground'
                 }
-                href="#"
+                href={item.href}
                 size="lg"
               >
                 {item.label}

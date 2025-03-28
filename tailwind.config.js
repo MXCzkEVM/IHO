@@ -13,10 +13,17 @@ const config = {
       fontFamily: {
         sans: ['var(--font-sans)'],
         mono: ['var(--font-mono)'],
+        merriweather: ['var(--font-merriweather)'],
+        barlow: ['var(--font-barlow)'],
+        spacex: ['spacex'],
+      },
+      backgroundImage: {
+        dark: 'linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), linear-gradient(180deg, #666 0%, #000 100%)',
+        light: 'linear-gradient(0deg, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.40) 100%), linear-gradient(180deg, #a6a6a6 0%, #fff 100%)',
       },
     },
   },
-  darkMode: 'class',
+  darkMode: ['selector', '[data-theme="dark"]'],
   plugins: [heroui()],
 }
 

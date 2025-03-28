@@ -14,6 +14,9 @@ export default function Document() {
         className={clsx(
           'min-h-screen bg-background font-sans antialiased',
           fonts.sans.variable,
+          fonts.barlow.variable,
+          fonts.merriweather.variable,
+          fonts.mono.variable,
         )}
       >
         <Main />

@@ -1,8 +1,10 @@
+import type { PropWithHtmlProps } from '@hairy/react-lib'
 import { Link } from '@heroui/link'
+import clsx from 'clsx'
 
-export function Footer() {
+export function Footer(props: PropWithHtmlProps) {
   return (
-    <footer className="w-full flex items-center justify-center py-3">
+    <footer {...props} className={clsx('w-full flex items-center justify-center py-3', props.className)}>
       <Link
         isExternal
         className="flex items-center gap-1 text-current"

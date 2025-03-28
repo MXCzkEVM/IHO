@@ -5,7 +5,8 @@ import { regions } from '@/config/regions'
 import { useStoreUser } from '@/hooks/use-store-user'
 import { useAsyncCallback, useWhenever } from '@hairy/react-lib'
 import { isEqual } from '@hairy/utils'
-import { Button, Form, Input, Select, Spin } from 'antd'
+import { Button } from '@heroui/button'
+import { Form, Input, Select, Spin } from 'antd'
 import { useMemo } from 'react'
 import { findMobilePrefix, parsePhone } from './form-shipping.utils'
 
@@ -87,7 +88,7 @@ export function FormShipping() {
         form={form}
         layout="vertical"
       >
-        <div className="flex gap-8px">
+        <div className="flex gap-2">
           <Form.Item<FieldType>
             label="firstName"
             className="flex-1"
@@ -115,7 +116,7 @@ export function FormShipping() {
         >
           <Input placeholder="Please input your email" />
         </Form.Item>
-        <div className="flex gap-8px">
+        <div className="flex gap-2">
           <Form.Item<FieldType>
             className="w-150px"
             label="Country/Region"
@@ -157,7 +158,7 @@ export function FormShipping() {
           <Input.TextArea placeholder="Please enter your shipping address" count={{ max: 200 }} />
         </Form.Item>
         <Form.Item className="flex justify-end mb-0">
-          <Button disabled={equal} loading={loadFinish}>
+          <Button type="submit" color="primary" disabled={equal} isLoading={loadFinish}>
             Save
           </Button>
         </Form.Item>

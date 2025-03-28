@@ -2,7 +2,7 @@ import { useExtendOverlay } from '@overlastic/react'
 import { Modal, Tabs } from 'antd'
 import { FormShipping } from './form-shipping'
 
-export function DialogSettings() {
+export function SettingsDialog() {
   const { visible, resolve } = useExtendOverlay({
     duration: 500,
   })

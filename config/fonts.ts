@@ -1,8 +1,9 @@
 import {
-  Barlow,
+  Barlow_Semi_Condensed as Barlow,
   Merriweather,
   Fira_Code as Mono,
   Inter as Sans,
+
 } from 'next/font/google'
 
 const sans = Sans({
@@ -24,7 +25,7 @@ const merriweather = Merriweather({
 const barlow = Barlow({
   subsets: ['latin'],
   variable: '--font-barlow',
-  weight: ['300', '400', '700', '900'],
+  weight: ['100', '200', '300', '400', '600', '700', '900'],
 })
 
 export const fonts = {
