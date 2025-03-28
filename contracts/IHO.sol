@@ -26,6 +26,7 @@ contract IHO is VerifiableUpgradeable, BidirectionalTransfer, UUPSUpgradeable, O
   event Confirmed(
     address indexed from,
     uint256 indexed pid,
+    uint256 indexed oid,
     Price[] prices,
     uint256 expire,
     string memo
@@ -33,13 +34,14 @@ contract IHO is VerifiableUpgradeable, BidirectionalTransfer, UUPSUpgradeable, O
 
   function create(
     uint256 pid,
+    uint256 oid,
     Price[] memory prices,
     uint256 expire,
     string memory memo,
     bytes memory signature
   ) external payable {
     bytes32 pricesHash = keccak256(abi.encode(prices));
-    verify(abi.encodePacked(pid, pricesHash, expire, memo), signature);
+    verify(abi.encodePacked(pid, oid, pricesHash, expire, memo), signature);
     for (uint256 i = 0; i < prices.length; i++) {
       if (prices[i].amount > 0)
         transfer(
@@ -49,7 +51,7 @@ contract IHO is VerifiableUpgradeable, BidirectionalTransfer, UUPSUpgradeable, O
           prices[i].amount
         );
     }
-    emit Confirmed(msg.sender, pid, prices, expire, memo);
+    emit Confirmed(msg.sender, pid, oid, prices, expire, memo);
   }
 
   function withdraw(address token , uint256 amount) public onlyOwner {

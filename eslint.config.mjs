@@ -8,7 +8,16 @@ export default antfu({
     'react/no-unstable-context-value': 'off',
     'react-refresh/only-export-components': 'off',
     'node/prefer-global/process': 'off',
+    'react-hooks-extra/no-direct-set-state-in-use-effect': 'off',
+    'react/no-array-index-key': 'off',
     'react-dom/no-missing-button-type': 'off',
     'react/prefer-destructuring-assignment': 'off',
   },
+  ignores: [
+    '.next',
+    'public/*',
+    'build',
+    'dist',
+    'api',
+  ],
 })

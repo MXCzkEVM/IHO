@@ -1,11 +1,11 @@
-import { defineConfig } from '@genapi/cli'
+import { defineConfig } from '@genapi/core'
 
 export default defineConfig({
   input: `${process.env.NEXT_PUBLIC_SERVER_URL}/swagger/json`,
   pipeline: 'swag-fetch-ts',
   baseURL: 'process.env.NEXT_PUBLIC_SERVER_URL',
   output: {
-    main: 'src/api/index.ts',
-    type: 'src/api/index.type.ts',
+    main: 'api/index.ts',
+    type: 'api/index.type.ts',
   },
 })

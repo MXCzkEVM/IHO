@@ -4,7 +4,7 @@ leverages the capabilities of [Rainbowkit 2](https://beta.rainbowkit.com/guides/
 
 ## Features
 
-- ⚡️ Built with speed using [Next.js 14](https://nextjs.org/), [React](https://react.docschina.org/), [Rainbowkit 2](https://beta.rainbowkit.com/guides/rainbowkit-wagmi-v2), [Wagmi 2](https://github.com/wevm/wagmi), and [Ethers 5](https://github.com/ethers-io/ethers.js)
+- ⚡️ Built with speed using [Next.js 15](https://nextjs.org/), [React](https://react.docschina.org/), [Rainbowkit 2](https://beta.rainbowkit.com/guides/rainbowkit-wagmi-v2), [Wagmi 2](https://github.com/wevm/wagmi), and [Ethers 5](https://github.com/ethers-io/ethers.js)
 - 🗒 Generate multiple contract types easily with the `pnpm gen:abi` command
 - 🗂 File-based routing powered by [vite-plugin-pages](https://github.com/hannoeru/vite-plugin-pages)
 - 🎨 Seamless integration with Tailwind CSS using [UnoCSS](https://github.com/unocss/unocss)
